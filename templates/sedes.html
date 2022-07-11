@@ -1,0 +1,65 @@
+{% extends './base.html' %} {% block title%} Universidad del Valle {% endblock
+    %} {% block body %}
+    <h2>Gestor de estudiantes</h2>
+    <h3>
+      Este es el gestor de estudiantes creado como proyecto final <br />
+      creado por Tristan Vidal.
+    </h3>
+    <article class="panel">
+      <!--Search-->
+      <div class="box search-panel">
+        <form method="POST" action="/buscar_sede" class="search-form">
+          <input
+            id="GET-param"
+            type="text"
+            name="param"
+            class="input"
+            placeholder="Busca una palabra aquí"
+            required
+            class="input"
+          />
+          <div class="form-buttons">
+            <input type="submit" class="primary-button" value="Buscar" />
+            <a href="/cursos">
+              <span class="secondary-button" style="margin-left: 30px;"
+                >Limpiar</span
+              >
+            </a>
+          </div>
+        </form>
+      </div>
+    
+      {% if sedes == [] %}
+      <div
+        class="box"
+        style="grid-column: 1 / span 4; text-align: center;font-weight: 700;"
+      >
+        No hay sedes registradas
+      </div>
+      {% else %}
+      <table class="table box" style="grid-column: 1 / span 4;">
+        <thead>
+          <tr>
+            <th class="start-th">CÓDIGO</th>
+            <th>NOMBRE</th>
+            <th>DIRECCIÓN</th>
+            <th>NOº COMPLEJOS</th>
+            <th>TELÉFONO</th>
+            <th>TOTAL ESTUDIANTES</th>
+            <th class="end-th"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for lista in sedes %}
+          <tr>
+            {% for sede in lista %}
+            <td>{{ sede }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+    </article>
+    {% endblock %}
+    

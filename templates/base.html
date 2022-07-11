@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ES">
+  <head>
+    <meta charset="UTF-8"/>
+
+    <title>{% block title%} {% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='img/logo.png') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-text">
+        <img
+          src="{{ url_for('static', filename='img/logo.png') }}"
+          class="logo"
+          alt="Logo"
+        />
+        <h1 class="logo-text">Universidad</h1>
+      </div>
+      <nav>
+        <ul class="nav-text">
+          <li><a href="/">Estudiantes</a></li>
+          <li><a href="/cursos">Cursos</a></li>
+          <li><a href="/profesores">Profesores</a></li>
+          <li><a href="/sedes">Sedes</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--- Content --->
+    <main>
+      {% block body %} {% endblock %}
+    </main>
+
+    <div class="footer-container">
+      <div class="footer-container-two">
+        <footer>
+          <div class="footer-grid">
+            <div>
+              <h4>Recursos generales</h4>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+            </div>
+            <div>
+              <h4>Más</h4>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+            </div>
+            <div>
+              <h4>Sobre la universidad</h4>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Documentación</a
+                >
+              </p>
+            </div>
+            <div>
+              <h4>Redes</h4>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >YouTube</a
+                >
+              </p>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Twitter</a
+                >
+              </p>
+              <p>
+                <a href="/docs" target="_blank" rel="noopener noreferrer"
+                  >Facebook</a
+                >
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
+
+{% block content%} {% endblock %}

@@ -1,0 +1,53 @@
+{% extends './base.html' %} {% block title%} Universidad del Valle {% endblock
+%} {% block body %}
+<h2>Gestor de estudiantes</h2>
+<h3>
+  Este es el gestor de estudiantes creado como proyecto final <br />
+  creado por Tristan Vidal.
+</h3>
+<article class="panel-two">
+  <div></div>
+  <div class="box">
+    <div class="detail">
+      <span class="title-detail">Código: </span>{{estudiante[0]}}
+    </div>
+    <div class="detail">
+      <span class="title-detail">Nombre: </span>{{estudiante[1]}}
+    </div>
+    <div class="detail">
+      <span class="title-detail">Documento: </span>{{estudiante[2]}}
+    </div>
+    <div class="detail">
+      <span class="title-detail">Programa: </span>{{estudiante[3]}}
+    </div>
+    <div class="detail">
+      <span class="title-detail">Jornada: </span>{{estudiante[4]}}
+    </div>
+    <div class="detail">
+      <span class="title-detail">Semestre: </span>{{estudiante[5]}}
+    </div>
+    <div class="detail">
+      <span class="title-detail">Cursos asignados: </span>
+      <ul>
+        {% for item in program %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="detail">
+      <span class="title-detail">Profesores: </span>
+      <ul>
+        {% for item in teachers %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="detail">
+      <span class="title-detail">Sede: </span>{{ location }}
+    </div>
+    <a href="/">
+      <span class="primary-button" style="margin: 20px;">Regresar</span>
+    </a>
+  </div>
+</article>
+{% endblock %}
